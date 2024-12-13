@@ -1,0 +1,20 @@
+WIP=float(input('How many of screws do you want to buy?:'))
+Gs=(WIP*0.99)
+Disc=0
+if(WIP>=10)and(WIP<=99.99):
+    Dis=(Gs*0.10)
+elif(WIP>=100) and (WIP<=999.99):
+    Dis=(Gs*0.20)
+elif(WIP>=1000) and (WIP<=9999.99):
+    Dis=(Gs*0.30)
+elif(WIP>10000):
+    Dis=(Gs*0.40)
+else:
+    Disc=0
+
+FinA=(Gs-Disc)
+
+print('Number of pounds: ',WIP)
+print('Gross sales: ',Gs)
+print('Discount: ',Dis)
+print('Final amount: ',FinA)
