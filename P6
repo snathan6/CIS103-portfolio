@@ -1,0 +1,21 @@
+ans = 'y'
+while (ans=='y' or ans == 'Y'):
+    x =0.0
+    runtime = input ('Enter your final time:')
+    lenrun = len (runtime)
+    if lenrun == 0:
+        print ('Run time cannot be zero')
+    elif runtime. isspace () :
+        print ('Run time may not be blank')   
+    elif runtime. isalpha ():
+        print ('Running time must be numerical')
+    runtimeA = float (runtime)
+    if runtimeA < 5:
+        print ('Running time must be at least 5 minutes')
+    else:
+        while (x < runtimeA) :
+            x=x+5
+            cburn = 4.9 * x
+            print ('Minutes: ',x, 'Total calories burned: ', cburn, 'Calories')
+        ans=input('try again? y/n')
+                   
