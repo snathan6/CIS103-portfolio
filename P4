@@ -1,0 +1,49 @@
+name = input('Enter your name(First or last only):')
+account_number=input('Enter your account number:')
+payment=input('Enter payment amount:')
+
+name_error= None
+if len(name)== 0 or name.isspace():
+    name_error='Name Cannot be blank'
+elif len(name)< 3:
+    name_error='Name too Short'
+elif not name.isalpha():
+    name_error='Name Must be Alphabetic'
+else:
+    print('Valid')
+
+account_error= None
+if len(account_number)==0 or account_number.isspace():
+    account_error='Account number cannot be blank'
+elif not account_number.isnumeric():
+    account_error='Account number must be numeric'
+elif len(account_number)!=9:
+    account_error='Account number must be 9 digits'
+else:
+    print('Valid')
+
+
+payment_error=None
+if len(payment)== 0 or payment.isspace():
+    payment_error = 'Payment cannot be blank'
+elif not payment.replace('-', '',1).isdigit():
+    payment_error='payment must be numeric'
+elif float(payment)<0:
+    payment_error='Payment cannot be negative'
+elif float(payment)==0:
+    payment_error = 'Payment cannot be zero'
+else:
+    print('Valid')
+
+if name_error:
+    print(name_error)
+if account_error:
+    print(account_error)
+if payment_error:
+    print(payment_error)
+
+if not (name_error or account_error or payment_error):
+    print('\nInput verified successfully:')
+    print(f'name:{name}')
+    print(f'Account Number: {account_number}')
+    print(f'Payment Amount:${float (payment):.2f}')
